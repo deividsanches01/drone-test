@@ -21,6 +21,6 @@ RUN echo $'PORT=\n\
   >> /app/.env
   
 CMD node src/index.js
-
+teste
 EXPOSE 3000
 
