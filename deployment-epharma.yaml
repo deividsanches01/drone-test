@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: epharma
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: epharma
+    spec:
+      containers:
+      - name: epharma-app
+        image: test:001
+        ports:
+        - containerPort: 3000

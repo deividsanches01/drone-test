@@ -1,0 +1,9 @@
+version: "3.7"
+
+services:
+  epharma-int:
+    image: deivid/test
+    container_name: epharma
+    ports:
+      - "80:3000"
+ 

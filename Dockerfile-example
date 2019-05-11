@@ -1,0 +1,26 @@
+FROM node:10
+
+WORKDIR /app
+
+COPY package*.json /app/
+RUN npm install
+COPY . /app
+
+RUN echo $'PORT=\n\
+  QUEUE_HOST=\n\
+  INTEGRATION_USERNAME=\n\
+  INTEGRATION_PASSWORD=\n\
+  INTEGRATION_GRANT_TYPE=\n\
+  INTEGRATION_CLIENT_ID=\n\
+  INTEGRATION_CLIENT_SECRET=\n\
+  INTEGRATION_HOST=\n\
+  MONGO_HOST=\n\
+  MONGO_USER=\n\
+  MONGO_PASSWORD=\n\
+  MONGO_DB_NAME=\n'\
+  >> /app/.env
+  
+CMD node src/index.js
+
+EXPOSE 3000
+
